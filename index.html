@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网页</title>
+</head>
+<body>
+
+    <header>
+        <h1>欢迎使用网页下载程序</h1>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>下载程序</h2>
+            <p>下面可以下载程序</p>
+            <a href="#" onclick="downloadTwoFiles()">下载程序2024.04.07</a>
+
+<script>
+function downloadTwoFiles() {
+    var file1Url = '';
+    var file2Url = '';
+
+    // 创建两个<a>标签来下载文件
+    var file1Link = document.createElement('a');
+    file1Link.href = file1Url;
+    file1Link.download = 'MainApp.exe'; // 第一个文件的文件名
+
+    var file2Link = document.createElement('a');
+    file2Link.href = file2Url;
+    file2Link.download = 'DcPluginFlat.dll'; // 第二个文件的文件名
+
+    // 将<a>标签添加到DOM中
+    document.body.appendChild(file1Link);
+    document.body.appendChild(file2Link);
+
+    // 模拟点击<a>标签来触发下载
+    file1Link.click();
+    file2Link.click();
+
+    // 下载完成后移除<a>标签
+    document.body.removeChild(file1Link);
+    document.body.removeChild(file2Link);
+}
+</script>
+        
+    </main>
+
+    <footer>
+        <p>版权所有,违法必究 &copy; 2024 我的网页</p>
+    </footer>
+
+</body>
+</html>
